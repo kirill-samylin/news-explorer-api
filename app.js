@@ -28,12 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger); // подключаем логгер запросов
 
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error(messageCrash);
-  }, 0);
-});
-
 app.use('/', authRouter);
 
 app.use(auth);
